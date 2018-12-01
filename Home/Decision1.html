@@ -2,16 +2,31 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Latest compiled Bootstrap JavaScript -->
   <script src=" http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js "></script>
-  <link rel="stylesheet" type="text/css" href="Decision1CSS.css">
-  <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="Decision1CSS.css">
 </head>
 <body>
-  <h1> Decisions 1.0 </h1>
+  <div class="container-fluid">
+    <h1 id="header"> Decisions 1.0 </h1>
+  </div>
   <!--Insert navigation bar here, with options: Make a decision, About, Contact Us-->
-
   <div>
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a #href="#decide">Make a decision</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div class="jumbotron decide">
+    <!--Create a button in this section so the individual can go and make a decision-->
+    <h2 id="decidebutton"> Make a decision </h2>
+  </div>
+
+  <div class="jumbotron about">
     <!--About the website (idea behind it)-->
-    <h2> About </h2>
+    <h2> About <a name="about"></a></h2>
     <div>
       <p> This website idea stemmed from myself, Lydia Adejumo. I consider myself to be quite indecisive for some not so important issues like decising on a restaurant to go to or a new phone. This method of deciding has been tried and tested; proving to a very helpful method.</p>
       <p> Hopefully this website will be useful to all other not so decisive individuals, here to help you make a rational decision.</p>
@@ -19,9 +34,9 @@
     </div>
   </div>
 
-  <div>
+  <div class="jumbotron contact">
     <!--Contact the site for improvements-->
-    <h2> Contact Us </h2>
+    <h2> Contact Us <a name="contact"></a></h2>
     <div>
       <p> If you have any concerns or areas of improvements feel free to contact us.</p>
       <!--here one will leave insert their email address or find social media links-->
