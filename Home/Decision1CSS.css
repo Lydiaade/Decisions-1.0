@@ -8,9 +8,7 @@ h2{
 p{
   text-align: center;
 }
-.jumbotron{
-  height: 80%;
-}
+
 
 /* Navigation bar */
 ul {
@@ -47,8 +45,21 @@ li a:hover {
 
 
 /* Decisions Button*/
+.decide{
+  background-image: url(../Images/Decidecontained.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 80%;
+  width: 90%;
+  background-color: white;
+  border-radius: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 #Decibut{
-  text-align: center;
+  /*text-align: left;*/
+  margin: 30%;
+  margin-left: 22%;
 }
 .button {
   background-color: rgba(255,140,0,0.8);
@@ -67,6 +78,11 @@ li a:hover {
 .button:hover {opacity: 1}
 
 /* About Us*/
-
+.about{
+  height: 100%;
+}
 
 /* Contact Us */
+.contact{
+  height: 100%;
+}
