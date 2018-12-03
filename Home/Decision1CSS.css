@@ -2,6 +2,9 @@
 body{
   background-color: rgba(255,145,1,0.6);
 }
+h1{
+  color:white;
+}
 h2{
   text-align: center;
 }
@@ -49,8 +52,8 @@ li a:hover {
   background-image: url(../Images/Decidecontained.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  height: 80%;
-  width: 90%;
+  height: auto;
+  width: 95%;
   background-color: white;
   border-radius: 40px;
   margin-top: 20px;
@@ -59,7 +62,7 @@ li a:hover {
 #Decibut{
   /*text-align: left;*/
   margin: 30%;
-  margin-left: 22%;
+  margin-left: 25%;
 }
 .button {
   background-color: rgba(255,140,0,0.8);
@@ -79,10 +82,69 @@ li a:hover {
 
 /* About Us*/
 .about{
-  height: 100%;
+  height: auto;
+  background-color: white;
 }
+.mespecific{
+  margin-top: 30px;
+}
+img{
+  height: 175px;
+  width: 175px;
+  border-radius: 100px;
+}
+.image-container{
+  text-align: center;
+}
+.infoaboutcreator{
+  margin-top: 20px;
+}
+.othertext{
+  margin-top: 30px;
+}
+
+
 
 /* Contact Us */
 .contact{
   height: 100%;
+  background-color: white;
+}
+
+
+/*Social Media links*/
+.socialmedia{
+  text-align: center;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%
+}
+.fa:hover {
+    opacity: 0.6;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-youtube {
+    background: red;
+    color: white;
+}
+.fa-snapchat{
+  background: yellow;
+  color: white;
+}
+.fa-instagram{
+  background: purple;
+  color: white;
 }
