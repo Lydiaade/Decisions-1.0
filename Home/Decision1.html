@@ -6,25 +6,25 @@
     <link rel="stylesheet" type="text/css" href="Decision1CSS.css">
 </head>
 <body>
-  <div class="container-fluid">
-    <h1 id="header"> Decisions 1.0 </h1>
+  <div class="container-fluid main">
+    <div>
+        <!--Insert navigation bar here, with options: Make a decision, About, Contact Us-->
+      <ul class="navbar">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a #href="#decide">Make a decision</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
   </div>
-  <!--Insert navigation bar here, with options: Make a decision, About, Contact Us-->
-  <div>
-    <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a #href="#decide">Make a decision</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
-  </div>
-
   <!--Create a button in this section so the individual can go and make a decision-->
-  <div class="container decide">
+  <div class="container-fluid buttoncon">
+    <img id="abc" src="../Images/abcdecisions.png">
     <div id="Decibut">
       <button type="button" class="button"> Make a decision </button>
     </div>
   </div>
+
 
   <!--About the website (idea behind it)-->
   <div class="jumbotron about">
@@ -32,7 +32,7 @@
     <div class="container mespecific">
       <div class="row">
         <div class="col-md-4">
-          <div class="image-container"><img src="../Images/Me2.jpg" alt="Lydia Adejumo"></div>
+          <div class="image-container"><img id="imageme" src="../Images/Me2.jpg" alt="Lydia Adejumo"></div>
         </div>
         <div class="col-md-8">
           <div class="container infoaboutcreator">
@@ -56,6 +56,13 @@
     <div>
       <p> If you have any concerns or areas of improvements feel free to contact us.</p>
       <!--here one will leave insert their email address or find social media links-->
+      <div id="contact-form">
+        <form method="post" action="/signup">
+          <label for="email">Email address:</label>
+          <input type="email" id="email" name="email" required="required">
+          <input type="submit" value="Submit" id="submit-button">
+      </div>
+      <!--Social media links are here-->
       <div class="container socialmedia">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <a href="#" class="fa fa-facebook"></a>

@@ -2,18 +2,20 @@
 body{
   background-color: rgba(255,145,1,0.6);
 }
-h1{
-  color:white;
-}
 h2{
   text-align: center;
 }
 p{
   text-align: center;
 }
-
+.main{
+  background-color: white;
+}
 
 /* Navigation bar */
+.navbar{
+  margin-top: 20px;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -41,28 +43,25 @@ li a:hover {
     background-color:  rgba(255,140,0,0.55);
 }
 
-/* Header */
-#header{
-  text-align: right;
-}
 
+/* Decisions Button - container; display: flex-box; direction:center*/
 
-/* Decisions Button*/
-.decide{
-  background-image: url(../Images/Decidecontained.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: auto;
-  width: 95%;
+.buttoncon{
   background-color: white;
-  border-radius: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+
+}
+#abc{
+  max-width: 35%;
+  max-height: 40%;
+  align-self: center;
 }
 #Decibut{
-  /*text-align: left;*/
-  margin: 30%;
-  margin-left: 25%;
+  text-align: center;
 }
 .button {
   background-color: rgba(255,140,0,0.8);
@@ -88,7 +87,7 @@ li a:hover {
 .mespecific{
   margin-top: 30px;
 }
-img{
+#imageme{
   height: 175px;
   width: 175px;
   border-radius: 100px;
