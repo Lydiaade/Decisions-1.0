@@ -7,6 +7,7 @@ h2{
   font-family: rough;
   font-size: 40px;
   font-weight: bold;
+  color: rgba(245,105,50,0.8);
 }
 p{
   text-align: center;
@@ -17,15 +18,15 @@ p{
 }
 @font-face {
   font-family: clean;
-  src: url('../fonts/Raleway-Regular.ttf');
+  src: {{ url_for("static",filename="../fonts/Raleway-Regular.ttf")}};
 }
 @font-face {
   font-family: cleaner;
-  src: url('../fonts/Raleway-ExtraLight.ttf');
+  src: {{ url_for("static",filename="../fonts/Raleway-ExtraLight.ttf")}};
 }
 @font-face {
   font-family: rough;
-  src: url('../fonts/Inkfree.ttf');
+  src: {{ url_for("static",filename="../fonts/Inkfree.ttf")}};
 }
 
 /* Navigation bar*/
