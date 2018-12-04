@@ -1,51 +1,73 @@
 /* GENERIC DESIGN: Page design/Background */
 body{
-  background-color: rgba(255,145,1,0.6);
+  background-color: rgba(245,105,50,0.6);
 }
 h2{
   text-align: center;
+  font-family: rough;
+  font-size: 40px;
+  font-weight: bold;
 }
 p{
   text-align: center;
+  font-family: clean;
 }
 .main{
   background-color: white;
 }
+@font-face {
+  font-family: clean;
+  src: url('../fonts/Raleway-Regular.ttf');
+}
+@font-face {
+  font-family: cleaner;
+  src: url('../fonts/Raleway-ExtraLight.ttf');
+}
+@font-face {
+  font-family: rough;
+  src: url('../fonts/Inkfree.ttf');
+}
 
-/* Navigation bar */
+/* Navigation bar*/
 .navbar{
   margin-top: 20px;
+  margin-left: -5px;
 }
 ul {
+    display: inline-block;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: rgba(255,255,255,0.9);
-    position: -webkit- sticky; /* Safari */
-    position: sticky;
     top: 0;
+    font-family: clean;
+    text-transform: uppercase;
+    font-size: 15px;
 }
 li {
     float: left;
+    margin-left: 10px;
 }
 li a {
     display: block;
-    color: black;
+    color: rgb(245,115,60);
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 25px;
     text-decoration: none;
 }
 li a:hover {
-    background-color: rgba(255,140,0,0.15);
+    background-color: rgba(245,105,50,0.3);
+    border-radius: 30px;
 }
 .active {
-    background-color:  rgba(255,140,0,0.55);
+    background-color:  rgba(245,105,50,0.7);
+    color: white;
+    border-radius: 30px;
 }
 
 
 /* Decisions Button - container; display: flex-box; direction:center*/
-
 .buttoncon{
   background-color: white;
   display: flex;
@@ -53,18 +75,22 @@ li a:hover {
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
-
+  margin-bottom: 30px;
+  height: 90%;
 }
 #abc{
   max-width: 35%;
   max-height: 40%;
   align-self: center;
+  margin-top: 5.5%;
+  margin-bottom: 5%;
 }
 #Decibut{
   text-align: center;
+  margin-bottom: 7%;
 }
 .button {
-  background-color: rgba(255,140,0,0.8);
+  background-color: rgba(245,105,50,0.8);
   border: none;
   color: white;
   padding: 16px 32px;
@@ -76,6 +102,11 @@ li a:hover {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  border-radius: 40px;
+  font-family: clean;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
 }
 .button:hover {opacity: 1}
 
@@ -85,7 +116,7 @@ li a:hover {
   background-color: white;
 }
 .mespecific{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 #imageme{
   height: 175px;
@@ -96,21 +127,33 @@ li a:hover {
   text-align: center;
 }
 .infoaboutcreator{
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .othertext{
   margin-top: 30px;
 }
-
-
-
-/* Contact Us */
-.contact{
-  height: 100%;
-  background-color: white;
+.row{
+  margin-top: 20px;
 }
 
 
+/* Contact Us */
+#contactustext{
+  color: white;
+}
+.contact{
+  height: auto;
+  background-color: rgba(0,0,0,0);
+  text-align: center;
+}
+#contact-form{
+  font-family: clean;
+  font-size: 17px;
+}
+#email{
+  width: 30%;
+  margin-left: 0.5%;
+}
 /*Social Media links*/
 .socialmedia{
   text-align: center;
@@ -118,32 +161,29 @@ li a:hover {
 .fa {
     padding: 20px;
     font-size: 30px;
-    width: 50px;
-    height: auto;
+    width: 55px;
+    height: 55px;
     text-align: center;
     text-decoration: none;
-    border-radius: 50%
+    border-radius: 50%;
+    border-style: solid;
+    border-color: white;
+    border-width: thin;
+    margin-left: 10px;
 }
 .fa:hover {
     opacity: 0.6;
 }
 .fa-facebook {
-    background: #3B5998;
     color: white;
+
 }
 .fa-twitter {
-    background: #55ACEE;
     color: white;
 }
 .fa-youtube {
-    background: red;
     color: white;
 }
-.fa-snapchat{
-  background: yellow;
-  color: white;
-}
 .fa-instagram{
-  background: purple;
   color: white;
 }

@@ -1,0 +1,63 @@
+/* GENERIC DESIGN: Page design/Background */
+body{
+  background-color: rgba(245,105,50,0.6);
+}
+h2{
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+.main{
+  background-color: white;
+}
+@font-face {
+  font-family: clean;
+  src: url('../fonts/Raleway-Regular.ttf');
+}
+@font-face {
+  font-family: cleaner;
+  src: url('../fonts/Raleway-ExtraLight.ttf');
+}
+@font-face {
+  font-family: rough;
+  src: url('../fonts/Inkfree.ttf');
+}
+
+/* Navigation bar*/
+.navbar{
+  margin-top: 20px;
+  margin-left: -5px;
+}
+ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.9);
+    top: 0;
+    font-family: clean;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+li {
+    float: left;
+    margin-left: 10px;
+}
+li a {
+    display: block;
+    color: rgb(245,115,60);
+    text-align: center;
+    padding: 16px 25px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: rgba(245,105,50,0.3);
+    border-radius: 30px;
+}
+.active {
+    background-color:  rgba(245,105,50,0.7);
+    color: white;
+    border-radius: 30px;
+}
