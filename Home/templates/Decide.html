@@ -12,13 +12,13 @@
   <!--Insert navigation bar here, with options: Make a decision, About, Contact Us-->
   <div class="container-fluid main">
     <ul class="navbar sticky-top navbar-light bg-light">
-      <li id="list"><a href="Home.html">Home</a></li>
+      <li id="list"><a href="{{ url_for('Home') }}">Home</a></li>
       <li id="list"><a class="active" href="#decide">Make a decision</a></li>
-      <li id="list"><a href="Home.html#about">About</a></li>
-      <li id="list"><a href="Home.html#contact">Contact Us</a></li>
+      <li id="list"><a href="{{ url_for('About') }}">About</a></li>
+      <li id="list"><a href="{{ url_for('Home') }}">Contact Us</a></li>
     </ul>
     <span id="imagelogo">
-      <a href="Home.html">
+      <a href="{{ url_for('Home') }}">
         <img src="../static/Images/Logo.png" id="logo2" href="Decision1.html">
       </a>
     </span>
