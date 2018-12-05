@@ -12,15 +12,15 @@ p{
 /* All fonts available */
 @font-face {
   font-family: clean;
-  src: url('../fonts/Raleway-Regular.ttf');
+  src: url("Raleway-Regular.ttf");
 }
 @font-face {
   font-family: cleaner;
-  src: url('../fonts/Raleway-ExtraLight.ttf');
+  src: url("Raleway-ExtraLight.ttf");
 }
 @font-face {
   font-family: rough;
-  src: url('../fonts/Inkfree.ttf');
+  src: url("Inkfree.ttf");
 }
 
 /* Navigation bar*/
