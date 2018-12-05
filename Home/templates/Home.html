@@ -12,7 +12,7 @@
         <!--Insert navigation bar here, with options: Make a decision, About, Contact Us-->
       <ul class="navbar">
         <li><a class="active" href="#home">Home</a></li>
-        <li><a href="Decide.html">Make a decision</a></li>
+        <li><a href="href="{{ url_for('Decide') }}">Make a decision</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
@@ -22,7 +22,7 @@
   <div class="container-fluid buttoncon"><a name="home"></a>
     <img id="abc" src="../static/images/abcdecisions.png">
     <div id="Decibut">
-      <a href="Decide.html"><button type="button" class="button"> Make a decision </button></a>
+      <a href="href="{{ url_for('Decide') }}"><button type="button" class="button"> Make a decision </button></a>
     </div>
   </div>
 
