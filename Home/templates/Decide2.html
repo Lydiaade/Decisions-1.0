@@ -3,7 +3,7 @@
   <!-- Latest compiled Bootstrap JavaScript -->
   <script src=" http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js "></script>
     <link rel='stylesheet' href={{ url_for("static",filename="css/bootstrap.css")}}>
-    <link rel="stylesheet" type="text/css" href={{ url_for("static",filename="css/Decide.css")}}>
+    <link rel="stylesheet" type="text/css" href={{ url_for("static",filename="css/Decide2.css")}}>
     <title>Decide</title>
 </head>
 <body>
@@ -26,15 +26,18 @@
   <div>
     <div class="container decide1">
      <div id="instruction">
-       <h2> Please answer the questions as they appear.</h2>
+       <h2> Okay {{name}}, you can now list the options you are deciding on below.</h2>
      </div>
      <div class="container questions">
        <form method="post" action="/decide2">
-         <span id="ques1">
-           <label for="name">Name: </label><input name="name" id="name" required="required">
+         <span id="option">
+           <label for="name">Option 1: </label><input name="option1" id="optionn1" required="required">
          </span><br>
-         <br><span id="ques2">
-           <label for="reason">What are you deciding on? </label><input name="reason" id="reason">
+         <br><span id="option">
+           <label for="name">Option 2: </label><input name="option2" id="optionn2" required="required">
+         </span><br>
+         <br><span id="option">
+           <label for="name">Option 3: </label><input name="option3" id="optionn3" required="required">
          </span><br>
          <br><span id="submit1">
            <input type="submit" value="Submit" id="submit-button">
