@@ -42,13 +42,23 @@ def Decide2():
     print form_data["name"]
     return render_template('Decide2.html', name=request.form["name"])
 
+options_list()
+print options_list
+
 @app.route("/decide3", methods=["POST"])
 def Decide3():
     form_data = request.form
     print form_data["option1"]
     print form_data["option2"]
     print form_data["option3"]
+    options_list.append(form_data["option1"])
+    options_list.append(form_data["option2"])
+    options_list.append(form_data["option3"])
+    print options_list
     return render_template('Decide3.html')
+
+
+
 
 @app.route("/decide4.1", methods=["POST"])
 def Decide41():
