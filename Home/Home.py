@@ -35,4 +35,10 @@ def send_simple_message(email):
               "subject": "Contact Response",
               "text": "Thank for your expressed interest. We will definetely take your opinions on board when improving Decisions 1.0. In order to register your query please email <insert email> with your issue and will take it from there. Once again, thank you for your expressed interest and have a lovely day."})
 
+@app.route("/decide2", methods=["POST"])
+def Decide2():
+    form_data = request.form
+    print form_data["name"]
+    return render_template('Decide2.html', name=request.form["name"])
+
 app.run(debug=True)

@@ -98,29 +98,26 @@ h2{
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
-  margin-left: 10%;
+  text-align: center;
 }
-#ques1{
-  text-align: left;
-  order: 1;
+#option{
+  text-align: center;
 }
-#name{
-  width: 30%;
+#optionn1{
+  width: 60%;
   margin-left: 2%
 }
-#ques2{
-  text-align: left;
-  order: 2;
+#optionn2{
+  width: 60%;
+  margin-left: 2%
 }
-#reason{
-  width: 45%;
-  margin-left: 2%;
+#optionn3{
+  width: 60%;
+  margin-left: 2%
 }
-
 #submit1{
   text-align: center;
   margin-top: 15%;
-  margin-left: 38%; 
 }
 #submit-button{
   background-color: rgba(245,105,50,0.8);
