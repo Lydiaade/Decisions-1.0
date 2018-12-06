@@ -26,18 +26,19 @@
   <div>
     <div class="container decide1">
      <div id="instruction">
-       <h2> Okay {{name}}, you can now list the options you are deciding on below.</h2>
+       <h2> Now that we know the options, we can progress. Please list the top 3 variables that would affect your decision</h2>
+       <h3> An example of this could be cost, price, quality, etc. <h3>
      </div>
      <div class="container questions">
        <form method="post" action="/decide3">
          <span id="option">
-           <label for="name">Option 1: </label><input name="option1" id="optionn1" required="required">
+           <label for="name">Variable 1: </label><input name="variable1" id="variable1" required="required">
          </span><br>
          <br><span id="option">
-           <label for="name">Option 2: </label><input name="option2" id="optionn2" required="required">
+           <label for="name">Variable 2: </label><input name="variable2" id="variable2" required="required">
          </span><br>
          <br><span id="option">
-           <label for="name">Option 3: </label><input name="option3" id="optionn3" required="required">
+           <label for="name">Variable 3: </label><input name="variable3" id="variable3" required="required">
          </span><br>
          <br><span id="submit1">
            <input type="submit" value="Submit" id="submit-button">
