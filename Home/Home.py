@@ -38,6 +38,7 @@ def send_simple_message(email):
 @app.route("/decide2", methods=["POST"])
 def Decide2():
     form_data = request.form
+    main_name = form_data["name"]
     print form_data["name"]
     return render_template('Decide2.html', name=request.form["name"])
 
@@ -48,5 +49,15 @@ def Decide3():
     print form_data["option2"]
     print form_data["option3"]
     return render_template('Decide3.html')
+
+@app.route("/decide4.1", methods=["POST"])
+def Decide41():
+    form_data = request.form
+    print form_data["variable1"]
+    print form_data["variable2"]
+    print form_data["variable3"]
+    print form_data["option1"]
+    return render_template('Decide4.html', variable1=request.form["variable1"], variable2=request.form["variable2"], variable3=request.form["variable3"], option1=request.form["option1"])
+
 
 app.run(debug=True)

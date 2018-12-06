@@ -17,28 +17,28 @@
       <li id="list"><a href="{{ url_for('Home') }}">About</a></li>
       <li id="list"><a href="{{ url_for('Home') }}">Contact Us</a></li>
     </ul>
-    <span id="imagelogo">
+    <div id="imagelogo">
       <a href="{{ url_for('Home') }}">
         <img src="../static/Images/Logo.png" id="logo2" href="Decision1.html">
       </a>
-    </span>
+    </div>
   </div>
   <div>
     <div class="container decide1">
      <div id="instruction">
-       <h2> Now that we know all your options. Please list the top 3 variables that would affect your decision</h2>
-       <h3> An example of this could be cost, price, quality, etc. <h3>
+       <h2> At this point, you would have to rank each option based on the variables previously listed.</h2>
+       <h3> Beginning with option 1,<span id="key"> {{option1}} </span>, you can rank it below, on a scale of 1 (bad) to 5 (good) <h3>
      </div>
      <div class="container questions">
-       <form method="post" action="/decide4.1">
+       <form method="post" action="/decide4.2">
          <span id="option">
-           <label for="name">Variable 1: </label><input name="variable1" id="variable1" required="required">
+           <label for="name">{{variable1}}: </label><input name="rank1.1" id="rank1.1" required="required">
          </span><br>
          <br><span id="option">
-           <label for="name">Variable 2: </label><input name="variable2" id="variable2" required="required">
+           <label for="name">{{variable2}}: </label><input name="rank1.2" id="rank1.2" required="required">
          </span><br>
          <br><span id="option">
-           <label for="name">Variable 3: </label><input name="variable3" id="variable3" required="required">
+           <label for="name">{{variable3}}: </label><input name="rank1.3" id="rank1.3" required="required">
          </span><br>
          <br><span id="submit1">
            <input type="submit" value="Submit" id="submit-button">
