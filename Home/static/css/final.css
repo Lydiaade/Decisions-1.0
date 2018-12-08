@@ -4,6 +4,25 @@ body{
 }
 h2{
   text-align: center;
+  font-family: clean;
+  font-size: 25px;
+}
+h3{
+  text-align: center;
+  padding-right: 10%;
+  font-family: clean;
+}
+h4{
+  text-align: center;
+  font-family: clean;
+  font-size: 25px;
+  font-weight: bold;
+}
+h5{
+  text-align: center;
+  font-family: rough;
+  font-size: 22px;
+  font-weight: bold;
 }
 p{
   text-align: center;
@@ -74,102 +93,94 @@ li a:hover {
     border-radius: 30px;
 }
 
-/* Main body, the decision area*/
+/* Main body, the results area*/
 .decide1{
   background-color: white;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  height: 80%;
+  margin-top: 1.7%;
+  margin-bottom: 1.7%;
+  height: auto;
   width: 97%;
   border-radius: 10px;
-  align-content: center;
-  align-items: center;
-}
-h2{
-  font-family: clean;
-  font-size: 25px;
-  margin-top: 5%;
-}
-h3{
-  font-family: clean;
-  font-size: 20px;
-  margin-bottom: 5%;
-  text-align: center;
-}
-#boldtext{
-  font-weight: bold;
-}
-.questions{
-  font-family: clean;
-  font-size: 20px;
+  display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
-  text-align: center;
-  margin-top: 5%;
 }
-#option{
-  text-align: center;
+#contactdetes{
+  margin-top: 2%;
 }
-#optionn1{
-  width: 60%;
-  margin-left: 2%
+.row{
+  align-content:space-between;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
-#optionn2{
-  width: 60%;
-  margin-left: 2%
+.finalresults{
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
-#optionn3{
-  width: 60%;
-  margin-left: 2%
+.col-md-6{
+  width: 75%;
+}
+.col-md-4{
+  width: 10%
+}
+.end{
+  margin-bottom: 2%;
 }
 
-#submit-button{
+/*Button design*/
+.reset{
+  text-align: center;
+}
+#button{
   background-color: rgba(245,105,50,0.8);
   border: none;
   color: white;
-  padding: 12px 24px;
+  padding: 16px 32px;
   text-align: center;
   font-size: 20px;
-  margin: 4px 2px;
+  margin: 10px 5px;
+  margin-bottom: 20px;
   opacity: 0.6;
-  transition: 0.5s;
+  transition: 0.3s;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
   border-radius: 40px;
   font-family: clean;
   text-transform: uppercase;
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 5%;
-}
-#submit-button:hover {opacity: 1}
-label{
+  font-size: 15px;
   font-weight: bold;
 }
-#variable1{
-  width: 60%;
-  margin-left: 2%
+#button:hover {opacity: 1}
+.button {
+  background-color: rgba(245,105,50,0.8);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 5px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 40px;
+  font-family: clean;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
 }
-#variable2{
-  width: 60%;
-  margin-left: 2%
+.button:hover {opacity: 1}
+.col-md-5{
+  width: 50%;
+  text-align: center;
 }
-#variable3{
-  width: 60%;
-  margin-left: 2%
-}
-#rank1{
-  width: 50px;
-  margin-left: 20px;
-}
-#rank2{
-  width: 50px;
-  margin-left: 20px;
-}
-#rank3{
-  width: 50px;
-  margin-left: 20px;
+
+#new{
+  text-align: center;
 }

@@ -1,0 +1,60 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled Bootstrap JavaScript -->
+  <script src=" http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js "></script>
+    <link rel='stylesheet' href={{ url_for("static",filename="css/bootstrap.css")}}>
+    <link rel="stylesheet" type="text/css" href={{ url_for("static",filename="css/final.css")}}>
+    <title>Decide</title>
+</head>
+<body>
+  <form method="post">
+  </form>
+  <!--Insert navigation bar here, with options: Make a decision, About, Contact Us-->
+  <div class="container-fluid main">
+    <ul class="navbar sticky-top navbar-light bg-light">
+      <li id="list"><a href="{{ url_for('Home') }}">Home</a></li>
+      <li id="list"><a class="active" href="{{ url_for('Decide')}}">Make a decision</a></li>
+      <li id="list"><a href="{{ url_for('Home') }}">About</a></li>
+      <li id="list"><a href="{{ url_for('Home') }}">Contact Us</a></li>
+    </ul>
+    <span id="imagelogo">
+      <a href="{{ url_for('Home') }}">
+        <img src="../static/Images/Logo.png" id="logo2" href="Decision1.html">
+      </a>
+    </span>
+  </div>
+  <div class="container decide1">
+    <div id="contactdetes">
+      <h2> The results concerning your decision ({{reason}}) is below... </h2>
+      <div class="container finalresults">
+        <div class="row">
+          <div class="col-md-6" id="options"><h3>{{option1}}<h3></div>
+          <div class="col-md-4" id="result"><h3>{{option1point}}<h3></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6" id="options"><h3>{{option2}}<h3></div>
+          <div class="col-md-4" id="result"><h3>{{option2point}}<h3></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6" id="options"><h3>{{option3}}<h3></div>
+          <div class="col-md-4" id="result"><h3>{{option3point}}<h3></div>
+        </div>
+      </div>
+      <div class="container end">
+          <h4>The best decision would be {{option1}} </h4>
+          <h5>Thank you {{name}} for using Decisions 1.0. Hopefully it has helped you is your decision!</h5>
+      </div>
+      <div class="container reset">
+        <div class="row">
+          <div class="col-md-5" id="new">
+            <form method="post" action="/restart"><input type="submit" id="button" value="New Decision"></form>
+          </div>
+          <div class="col-md-5" id="new">
+            <a href="{{ url_for('Home') }}"><button type="button" class="button">Back to Home</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
