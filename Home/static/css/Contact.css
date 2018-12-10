@@ -88,6 +88,16 @@ li a:hover {
   justify-content: center;
   align-content: center;
 }
+.howit{
+  background-color: white;
+  margin-top: 1.7%;
+  margin-bottom: 1.7%;
+  height: auto;
+  width: 97%;
+  border-radius: 10px;
+  justify-content: center;
+  align-content: center;
+}
 #contactdetes{
   margin-top: 5%;
 }
@@ -127,3 +137,20 @@ p{
   font-weight: bold;
 }
 .button:hover {opacity: 1}
+
+.col-md-2{
+  width: 200px;
+  height: auto;
+}
+#how{
+  width: 20%;
+  height: auto;
+}
+.row{
+  margin-top: 5%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
