@@ -35,6 +35,12 @@ def Decide():
     print corr_ordered_final_list
     return render_template('Decide.html')
 
+@app.route('/Howitworks', methods=['GET', 'POST'])
+def Howitworks():
+    if request.method == 'POST':
+        return redirect(url_for('Home'))
+    return render_template('HowItWorks.html')
+
 @app.route('/Home', methods=['GET', 'POST'])
 def Home():
     if request.method == 'POST':

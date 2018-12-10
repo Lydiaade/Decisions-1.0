@@ -3,7 +3,7 @@
   <!-- Latest compiled Bootstrap JavaScript -->
   <script src=" http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js "></script>
     <link rel='stylesheet' href={{ url_for("static",filename="css/bootstrap.css")}}>
-    <link rel="stylesheet" type="text/css" href={{ url_for("static",filename="css/Decide.css")}}>
+    <link rel="stylesheet" type="text/css" href={{ url_for("static",filename="css/Contact.css")}}>
     <title>Decide</title>
 </head>
 <body>
@@ -13,8 +13,8 @@
   <div class="container-fluid main">
     <ul class="navbar sticky-top navbar-light bg-light">
       <li id="list"><a href="{{ url_for('Home') }}">Home</a></li>
-      <li id="list"><a href="{{ url_for('Howitworks')}}">How it works</a></li>
-      <li id="list"><a class="active" href="#decide">Make a decision</a></li>
+      <li id="list"><a class="active" href="{{ url_for('Howitworks')}}">How it works</a></li>
+      <li id="list"><a href="{{ url_for('Decide')}}">Make a decision</a></li>
       <li id="list"><a href="{{ url_for('Home') }}">About</a></li>
       <li id="list"><a href="{{ url_for('Home') }}">Contact Us</a></li>
     </ul>
@@ -24,24 +24,19 @@
       </a>
     </span>
   </div>
+  <form method="post">
+  </form>
   <div>
     <div class="container decide1">
-     <div id="instruction">
-       <h2> Please answer the questions as they appear.</h2>
-     </div>
-     <div class="container questions">
-       <form method="post" action="/decide2">
-         <span id="ques1">
-           <label for="name">Name: </label><input name="name" id="name" required="required">
-         </span><br>
-         <br><span id="ques2">
-           <label for="reason">What are you deciding on? </label><input name="reason" id="reason">
-         </span><br>
-         <br><span id="submit1">
-           <input type="submit" value="Submit" id="submit-button">
-         </span>
-       </form>
+      <div id="contactdetes">
+        <p id="leadtext"> Thank you for your expressed interest in aiming to improve Decisions 1.0 </p>
+        <p> Please check your emails, where there will be details on how we can better improve</p>
+        <p> your experience and understand your query. </p>
+      </div>
+      <div id="Goback">
+        <a href="{{ url_for('Home') }}"><button type="button" class="button">Back to Home</button></a>
+      </div>
     </div>
   </div>
-</div>
+
 </body>
