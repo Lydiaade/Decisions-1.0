@@ -7,6 +7,8 @@ app = Flask("DecideApp")
 def Homepage():
     return render_template("Home.html")
 
+# Clearing out the lists to calculate new decision
+# Link -- Decide (input name and reasoning)
 @app.route('/Decide', methods=['GET', 'POST'])
 def Decide():
     if request.method == 'POST':
@@ -35,18 +37,23 @@ def Decide():
     print(corr_ordered_final_list)
     return render_template('Decide.html')
 
+
+# Link -- How it works
 @app.route('/Howitworks', methods=['GET', 'POST'])
 def Howitworks():
     if request.method == 'POST':
         return redirect(url_for('Home'))
     return render_template('HowItWorks.html')
 
+# Link -- Home page
 @app.route('/Home', methods=['GET', 'POST'])
 def Home():
     if request.method == 'POST':
         return redirect(url_for('Decide'))
     return render_template('Home.html')
 
+# Link -- contact detail completion section
+# once email has been included also initiates sending email
 @app.route("/contact", methods=["POST"])
 def Contact():
     form_data = request.form
@@ -54,6 +61,7 @@ def Contact():
     send_simple_message(form_data["email"])
     return render_template('Contact.html')
 
+# Sends email to whomever completes form
 def send_simple_message(email):
     return requests.post(
         "https://api.mailgun.net/v3/sandboxa9ce70879809408aa3386c574ebdf5e6.mailgun.org/messages",
@@ -63,20 +71,25 @@ def send_simple_message(email):
               "subject": "Contact Response",
               "text": "Thank for your expressed interest. We will definetely take your opinions on board when improving Decisions 1.0. In order to register your query please email <insert email> with your issue and will take it from there. Once again, thank you for your expressed interest and have a lovely day."})
 
-main_name=[]
-reasoning=[]
+main_name=[] # Username
+reasoning=[] # Reasoning for use of website
+
+# Link -- Decide 2 (options list)
+# User name and reasoning
 @app.route("/decide2", methods=["POST"])
 def Decide2():
     form_data = request.form
     main_name.append(form_data["name"])
     reasoning.append(form_data["reason"])
-    print(form_data["name"])
-    print(main_name)
-    print(reasoning)
+    #print(form_data["name"])
+    #print(main_name)
+    #print(reasoning)
     return render_template('Decide2.html', name=request.form["name"])
 
-options_list=[]
+options_list=[] #options list
 
+# Link -- Decide 3 (variables list)
+# Options List
 @app.route("/decide3", methods=["POST"])
 def Decide3():
     form_data = request.form
@@ -89,8 +102,10 @@ def Decide3():
     print(options_list)
     return render_template('Decide3.html')
 
-variables_list=[]
+variables_list=[] # Variables list
 
+# Link -- Decide 4 (prioritising factors)
+# Variables List
 @app.route("/decide4", methods=["POST"])
 def Decide4():
     form_data = request.form
@@ -103,8 +118,10 @@ def Decide4():
     print(variables_list)
     return render_template('Decide4.html', variable1=request.form["variable1"], variable2=request.form["variable2"], variable3=request.form["variable3"])
 
-main_ranks_list=[]
+main_ranks_list=[] # variable list priorities
 
+# Link -- Rank Order 1 (ranking 1st variable)
+# Prioritising factors
 @app.route("/rankorder1", methods=["POST"])
 def Rankorder1():
     form_data = request.form
@@ -117,9 +134,11 @@ def Rankorder1():
     print(main_ranks_list)
     return render_template('RankOrdering1.html', variable1=variables_list[0], variable2=variables_list[1], variable3=variables_list[2], option1=options_list[0])
 
-option1_ranks=[]
-results_for_all_options=[]
+option1_ranks=[] # Ranking in order for first variable
+results_for_all_options=[] # All options final result
 
+# Link -- Rank Order 2 (ranking 2nd variable)
+# Ranking first option based on all variable
 @app.route("/rankorder2", methods=["POST"])
 def Rankorder2():
     form_data = request.form
@@ -137,8 +156,10 @@ def Rankorder2():
     return render_template('RankOrdering2.html', variable1=variables_list[0], variable2=variables_list[1], variable3=variables_list[2], option2=options_list[1])
 
 
-option2_ranks=[]
+option2_ranks=[] # Ranking in order for second variable
 
+# Link -- Rank Order 3 (ranking 3rd variable)
+# Ranking second option based on all variable
 @app.route("/rankorder3", methods=["POST"])
 def Rankorder3():
     form_data = request.form
@@ -157,6 +178,8 @@ def Rankorder3():
 
 option3_ranks=[]
 
+# Link -- Final outcome
+# Ranking third option based on all variable
 @app.route("/finaldecision", methods=["POST"])
 def finaldecision():
     form_data = request.form
@@ -180,6 +203,7 @@ def finaldecision():
 
 ordered_final_list=[]
 corr_ordered_final_list=[]
+
 def final_conclusion1():
     if (results_for_all_options[0]>results_for_all_options[1] and results_for_all_options[0]>results_for_all_options[2]):
         ordered_final_list.append(options_list[0])
@@ -231,6 +255,8 @@ def final_conclusion3():
         print("Last is ",options_list[2],", with ",results_for_all_options[2],)
         print(ordered_final_list)
 
+
+# Clearing out the lists to calculate new decision
 @app.route("/restart", methods=["POST"])
 def restart():
     del main_name[:]
