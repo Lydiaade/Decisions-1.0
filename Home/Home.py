@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import requests
+from operator import itemgetter
 
 app = Flask("DecideApp")
 
@@ -67,7 +68,6 @@ options_list = []
 @app.route("/decide3", methods=["POST"])
 def Decide3():
     for name in request.form.values():
-        print(name)
         options_list.append(name)
         options_dict[name] = 0
     return render_template('Decide3.html')
@@ -83,26 +83,39 @@ def Decide4():
         variables_dict[name] = 0
         variables_list.append(name)
     for option in options_dict.keys():
-        options_dict[option] = variables_dict
+            options_dict[option] = {variable:0 for variable in variables_list}
     return render_template('Decide4.html', variable1=variables_list[0], variable2=variables_list[1], variable3=variables_list[2])
 
 # Link -- Rank Order 1 (ranking 1st variable)
 # Prioritising factors
 @app.route("/rankorder1", methods=["POST"])
 def Rankorder1():
-    print(options_list)
+    print(options_dict)
     for variable, value in request.form.items():
-        variables_dict[variable] = value
+        variables_dict[variable] = int(value)
     return render_template('Ranking.html', variable1=variables_list[0], variable2=variables_list[1], variable3=variables_list[2],
-    option1=options_list[0], option2=options_list[1], option3=options_list[2] )
+    option1=options_list[0], option2=options_list[1], option3=options_list[2])
 
+result = []
 
 # NEW RANKING PAGE FOR DECISIONS
 # Link -- Final outcome
 # Ranking third option based on all variable
 @app.route("/finaldecision", methods=["POST"])
 def ranking():
-    pass
+    for key, value in request.form.items():
+        opt_var = key.split(",")
+        options_dict[opt_var[0]][variables_list[int(opt_var[1])]] = int(value)
+
+    for opt in options_list:
+        total = 0
+        for var in variables_list:
+            total += options_dict[opt][var]*variables_dict[var]
+        result.append((opt,total))
+
+    decision = sorted(result, key=itemgetter(1), reverse=True)
+
+    return render_template('FINAL.html', decision, reasoning, main_name)
 
 
 
