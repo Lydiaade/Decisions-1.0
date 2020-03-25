@@ -26,24 +26,24 @@
   </div>
   <div class="container decide1">
     <div id="contactdetes">
-      <h2> The results concerning your decision ({{reasoning}}) is below... </h2>
+      <h2> The results concerning your decision on, {{reason}} is below... </h2>
       <div class="container finalresults">
         <div class="row">
-          <div class="col-md-6" id="options"><h3>{{option1}}<h3></div>
-          <div class="col-md-4" id="result"><h3>{{option1point}}<h3></div>
+          <div class="col-md-6" id="options"><h3>{{choice[0][0]}}<h3></div>
+          <div class="col-md-4" id="result"><h3>{{choice[0][1]}}<h3></div>
         </div>
         <div class="row">
-          <div class="col-md-6" id="options"><h3>{{option2}}<h3></div>
-          <div class="col-md-4" id="result"><h3>{{option2point}}<h3></div>
+          <div class="col-md-6" id="options"><h3>{{choice[1][0]}}<h3></div>
+          <div class="col-md-4" id="result"><h3>{{choice[1][1]}}<h3></div>
         </div>
         <div class="row">
-          <div class="col-md-6" id="options"><h3>{{option3}}<h3></div>
-          <div class="col-md-4" id="result"><h3>{{option3point}}<h3></div>
+          <div class="col-md-6" id="options"><h3>{{choice[2][0]}}<h3></div>
+          <div class="col-md-4" id="result"><h3>{{choice[2][1]}}<h3></div>
         </div>
       </div>
       <div class="container end">
-          <h4>The best decision would be {{option1}} </h4>
-          <h5>Thank you {{name}} for using Decisions 1.0. Hopefully it has helped you is your decision!</h5>
+          <h4>The best decision would be {{choice[0][0]}}.</h4>
+          <h5>Thank you {{name}}, for using Decisions 1.0. Hopefully it has helped you is your decision!</h5>
       </div>
       <div class="container reset">
         <div class="row">
