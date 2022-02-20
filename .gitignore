@@ -1,2 +1,8 @@
-
 python-getting-started/
+<<<<<<< HEAD
+venv
+=======
+venv
+.DS_STORE
+.idea
+>>>>>>> 480eaad (Renaming functions to reflect good python practices)
