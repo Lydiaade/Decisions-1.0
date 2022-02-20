@@ -4,40 +4,45 @@ from operator import itemgetter
 
 app = Flask("DecideApp")
 
+
 @app.route("/")
-def Homepage():
-    return render_template("Home.html")
+def homepage():
+    return render_template("app.html")
+
 
 # Link -- Decide (input name and reasoning)
-@app.route('/Decide', methods=['GET', 'POST'])
-def Decide():
+@app.route('/decide', methods=['GET', 'POST'])
+def decide():
     if request.method == 'POST':
         return redirect(url_for('Homepage'))
     return render_template('Decide.html')
 
 
 # Link -- How it works
-@app.route('/Howitworks', methods=['GET', 'POST'])
-def Howitworks():
+@app.route('/howitworks', methods=['GET', 'POST'])
+def how_it_works():
     if request.method == 'POST':
-        return redirect(url_for('Home'))
+        return redirect(url_for('app'))
     return render_template('HowItWorks.html')
 
-# Link -- Home page
-@app.route('/Home', methods=['GET', 'POST'])
-def Home():
+
+# Link -- app page
+@app.route('/home', methods=['GET', 'POST'])
+def home():
     if request.method == 'POST':
         return redirect(url_for('Decide'))
-    return render_template('Home.html')
+    return render_template('app.html')
+
 
 # Link -- contact detail completion section
 # once email has been included also initiates sending email
 @app.route("/contact", methods=["POST"])
-def Contact():
+def contact():
     form_data = request.form
     print(form_data["email"])
     send_simple_message(form_data["email"])
     return render_template('Contact.html')
+
 
 # Sends email to whomever completes form
 def send_simple_message(email):
@@ -49,52 +54,58 @@ def send_simple_message(email):
               "subject": "Contact Response",
               "text": "Thank for your expressed interest. We will definetely take your opinions on board when improving Decisions 1.0. In order to register your query please email <insert email> with your issue and will take it from there. Once again, thank you for your expressed interest and have a lovely day."})
 
-name = "" # Username
-reason = "" # Reasoning for use of website
-options_dict = {} #options list
+
+name = ""  # Username
+reason = ""  # Reasoning for use of website
+options_dict = {}  # options list
 options_list = []
-variables_dict = {} # Variables list
+variables_dict = {}  # Variables list
 variables_list = []
 result = []
+
 
 # Link -- Decide 2 (options list)
 # User name and reasoning
 @app.route("/decide2", methods=["POST"])
-def Decide2():
+def decide_2():
     name = request.form["name"].title()
     reason = request.form["reason"].lower()
     return render_template('Decide2.html', name=request.form["name"])
 
+
 # Link -- Decide 3 (variables list)
 # Options List
 @app.route("/decide3", methods=["POST"])
-def Decide3():
+def decide_3():
     for option in request.form.values():
         options_list.append(option)
         options_dict[option] = 0
     return render_template('Decide3.html')
 
+
 # Link -- Decide 4 (prioritising factors)
 # Variables List
 @app.route("/decide4", methods=["POST"])
-def Decide4():
+def decide_4():
     for name in request.form.values():
         variables_dict[name] = 0
         variables_list.append(name)
     for option in options_dict.keys():
-            options_dict[option] = {variable:0 for variable in variables_list}
+        options_dict[option] = {variable: 0 for variable in variables_list}
     print(variables_list)
-    return render_template('Decide4.html', variable = variables_list)
+    return render_template('Decide4.html', variable=variables_list)
+
 
 # Link -- Rank Order 1 (ranking 1st variable)
 # Prioritising factors
 @app.route("/rankorder1", methods=["POST"])
-def Rankorder1():
+def rank_order_1():
     print(variables_list)
     print(options_dict)
     for variable, value in request.form.items():
         variables_dict[variable] = int(value)
-    return render_template('Ranking.html', variable = variables_list, option = options_list)
+    return render_template('Ranking.html', variable=variables_list, option=options_list)
+
 
 # NEW RANKING PAGE FOR DECISIONS
 # Link -- Final outcome
@@ -109,12 +120,13 @@ def ranking():
     for opt in options_list:
         total = 0
         for var in variables_list:
-            total += options_dict[opt][var]*variables_dict[var]
-        result.append((opt,total))
+            total += options_dict[opt][var] * variables_dict[var]
+        result.append((opt, total))
 
     decision = sorted(result, key=itemgetter(1), reverse=True)
 
-    return render_template('FINAL.html', choice = decision, name = name, reason = reason)
+    return render_template('FINAL.html', choice=decision, name=name, reason=reason)
+
 
 # Clearing out the lists to calculate new decision
 @app.route("/restart", methods=["POST"])
@@ -128,4 +140,6 @@ def restart():
     result.clear()
     return render_template('Decide.html')
 
-app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(debug=True)

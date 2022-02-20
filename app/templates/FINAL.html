@@ -12,14 +12,14 @@
   <!--Insert navigation bar here, with options: Make a decision, About, Contact Us-->
   <div class="container-fluid main">
     <ul class="navbar sticky-top navbar-light bg-light">
-      <li id="list"><a href="{{ url_for('Home') }}">Home</a></li>
-      <li id="list"><a href="{{ url_for('Howitworks')}}">How it works</a></li>
-      <li id="list"><a class="active" href="{{ url_for('Decide')}}">Make a decision</a></li>
-      <li id="list"><a href="{{ url_for('Home') }}">About</a></li>
-      <li id="list"><a href="{{ url_for('Home') }}">Contact Us</a></li>
+      <li id="list"><a href="{{ url_for('home') }}">Home</a></li>
+      <li id="list"><a href="{{ url_for('how_it_works')}}">How it works</a></li>
+      <li id="list"><a class="active" href="{{ url_for('decide')}}">Make a decision</a></li>
+      <li id="list"><a href="{{ url_for('home') }}">About</a></li>
+      <li id="list"><a href="{{ url_for('home') }}">Contact Us</a></li>
     </ul>
     <span id="imagelogo">
-      <a href="{{ url_for('Home') }}">
+      <a href="{{ url_for('home') }}">
         <img src="../static/Images/Logo.png" id="logo2" href="Decision1.html">
       </a>
     </span>
@@ -51,7 +51,7 @@
             <form method="post" action="/restart"><input type="submit" id="button" value="New Decision"></form>
           </div>
           <div class="col-md-5" id="new">
-            <a href="{{ url_for('Home') }}"><button type="button" class="button">Back to Home</button></a>
+            <a href="{{ url_for('home') }}"><button type="button" class="button">Back to Home</button></a>
           </div>
         </div>
       </div>

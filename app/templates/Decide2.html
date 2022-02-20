@@ -12,33 +12,33 @@
   <!--Insert navigation bar here, with options: Make a decision, About, Contact Us-->
   <div class="container-fluid main">
     <ul class="navbar sticky-top navbar-light bg-light">
-      <li id="list"><a href="{{ url_for('Home') }}">Home</a></li>
-      <li id="list"><a href="{{ url_for('Howitworks')}}">How it works</a></li>
+      <li id="list"><a href="{{ url_for('home') }}">Home</a></li>
+      <li id="list"><a href="{{ url_for('how_it_works')}}">How it works</a></li>
       <li id="list"><a class="active" href="#decide">Make a decision</a></li>
-      <li id="list"><a href="{{ url_for('Home') }}">About</a></li>
-      <li id="list"><a href="{{ url_for('Home') }}">Contact Us</a></li>
+      <li id="list"><a href="{{ url_for('home') }}">About</a></li>
+      <li id="list"><a href="{{ url_for('home') }}">Contact Us</a></li>
     </ul>
-    <div id="imagelogo">
-      <a href="{{ url_for('Home') }}">
+    <span id="imagelogo">
+      <a href="{{ url_for('home') }}">
         <img src="../static/Images/Logo.png" id="logo2" href="Decision1.html">
       </a>
-    </div>
+    </span>
   </div>
   <div>
     <div class="container decide1">
      <div id="instruction">
-       <h2> At this point, you would have to <span id="boldtext"> rank each variable, </span>based on its importance relative to your decision <br><span id="boldtext"> From 1 (most important) - 3 (least important)</span>.</h2>
+       <h2> Okay {{name}}, you can now list the options you are deciding on below.</h2>
      </div>
      <div class="container questions">
-       <form method="post" action="/rankorder1">
+       <form method="post" action="/decide3">
          <span id="option">
-           <label for="name">{{variable[0]}}: </label><input name={{variable[0]}} id="rank1" required="required" type="number" min="1" max="3">
+           <label for="name">Option 1: </label><input name="option1" id="optionn1" required="required">
          </span><br>
          <br><span id="option">
-           <label for="name">{{variable[1]}}: </label><input name={{variable[1]}} id="rank2" required="required" type="number" min="1" max="3">
+           <label for="name">Option 2: </label><input name="option2" id="optionn2" required="required">
          </span><br>
          <br><span id="option">
-           <label for="name">{{variable[2]}}: </label><input name={{variable[2]}} id="rank3" required="required" type="number" min="1" max="3">
+           <label for="name">Option 3: </label><input name="option3" id="optionn3" required="required">
          </span><br>
          <br><span id="submit1">
            <input type="submit" value="Submit" id="submit-button">
