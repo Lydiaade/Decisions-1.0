@@ -2,12 +2,14 @@ from flask import Flask, render_template, request, redirect, url_for
 import requests
 from operator import itemgetter
 
+from app.api.adapter.mailing_adapter import mailing_message
+
 app = Flask("DecideApp")
 
 
 @app.route("/")
 def homepage():
-    return render_template("app.html")
+    return render_template("Home.html")
 
 
 # Link -- Decide (input name and reasoning)
@@ -31,7 +33,7 @@ def how_it_works():
 def home():
     if request.method == 'POST':
         return redirect(url_for('Decide'))
-    return render_template('app.html')
+    return render_template('Home.html')
 
 
 # Link -- contact detail completion section
@@ -40,19 +42,13 @@ def home():
 def contact():
     form_data = request.form
     print(form_data["email"])
-    send_simple_message(form_data["email"])
+    _send_simple_message(form_data["email"])
     return render_template('Contact.html')
 
 
 # Sends email to whomever completes form
-def send_simple_message(email):
-    return requests.post(
-        "https://api.mailgun.net/v3/sandboxa9ce70879809408aa3386c574ebdf5e6.mailgun.org/messages",
-        auth=("api", "d470b0501ac7d51991d94c5c43b52951-059e099e-c9fa3bca"),
-        data={"from": "Decisions 1.0<mailgun@sandboxa9ce70879809408aa3386c574ebdf5e6.mailgun.org>",
-              "to": [email],
-              "subject": "Contact Response",
-              "text": "Thank for your expressed interest. We will definetely take your opinions on board when improving Decisions 1.0. In order to register your query please email <insert email> with your issue and will take it from there. Once again, thank you for your expressed interest and have a lovely day."})
+def _send_simple_message(email: str):
+    return requests.post(mailing_message(email))
 
 
 name = ""  # Username
@@ -65,12 +61,12 @@ result = []
 
 
 # Link -- Decide 2 (options list)
-# User name and reasoning
+# Username and reasoning
 @app.route("/decide2", methods=["POST"])
 def decide_2():
     name = request.form["name"].title()
     reason = request.form["reason"].lower()
-    return render_template('Decide2.html', name=request.form["name"])
+    return render_template('Decide2.html', name=name)
 
 
 # Link -- Decide 3 (variables list)
@@ -87,11 +83,11 @@ def decide_3():
 # Variables List
 @app.route("/decide4", methods=["POST"])
 def decide_4():
-    for name in request.form.values():
-        variables_dict[name] = 0
-        variables_list.append(name)
-    for option in options_dict.keys():
-        options_dict[option] = {variable: 0 for variable in variables_list}
+    for value in request.form.values():
+        variables_dict[value] = 0
+        variables_list.append(value)
+    for key in options_dict.keys():
+        options_dict[key] = {variable: 0 for variable in variables_list}
     print(variables_list)
     return render_template('Decide4.html', variable=variables_list)
 
